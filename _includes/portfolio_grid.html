@@ -9,24 +9,18 @@
     <div class="portfolio-flex-row" style="display: flex; flex-wrap: wrap; justify-content: center;">
       
       {% for post in site.posts %}
-      <div class="portfolio-flex-item portfolio-item" style="padding: 15px;">
+      <div class="portfolio-flex-item portfolio-item" style="padding: 15px; width: 33.33%; min-width: 250px;">
         <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
           <div class="caption">
             <div class="caption-content">
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img src="{{ '/assets/img/portfolio/' | append: post.img | relative_url }}" class="img-responsive" alt="{{ post.alt }}">
+          <img src="{{ '/img/portfolio/' | append: post.img | relative_url }}" class="img-responsive" alt="{{ post.alt }}">
         </a>
-        <h3 class="text-center" style="font-size: 1.2em; margin-top: 10px;">{{ post.title }}</h3>
+        <h3 class="text-center" style="font-size: 1.2em; margin-top: 10px; color: #2c3e50;">{{ post.title }}</h3>
       </div>
       {% endfor %}
-
-      {% if site.posts.size == 0 %}
-      <div class="col-lg-12 text-center">
-        <p>Project details coming soon! Currently working on UAMS and Physics Lab analysis.</p>
-      </div>
-      {% endif %}
 
     </div>
   </div>
